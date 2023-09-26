@@ -7,8 +7,8 @@ spec:
     spec:
       containers:
       - name: iperf3container
-        image: ghcr.io/michaeltrip/iperf3container:latest
-        args: ["-c", "iperf3.iperf3-server", "-p", "5201", "-t", "60"]
+        image: ghcr.io/michaeltrip/loadgenerator:v1.1
+        args: ["--max-cpu", "80", "--max-memory", "1024", "--target-ip", "iperf3.iperf3server", "--target-port", "5201", "--duration", "180"]
       restartPolicy: Never
   backoffLimit: 4
 
