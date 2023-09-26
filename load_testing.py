@@ -9,7 +9,7 @@ def cpu_load_test(max_cpu_percent, duration_seconds):
 
     num_threads = int(max_cpu_percent * 0.01 * multiprocessing.cpu_count())
 
-    stress_command = f"stress --cpu {num_threads} --timeout {duration_seconds}s"
+    stress_command = f"stress-ng --cpu {num_threads} --timeout {duration_seconds}s"
     subprocess.Popen(stress_command, shell=True).wait()
 
     print("CPU Load Test Completed.")
