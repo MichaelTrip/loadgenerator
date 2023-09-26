@@ -25,7 +25,7 @@ env:
 jobs:
 
 
-  build_mate:
+  build_loadgenerator:
 
     runs-on: ubuntu-latest
     permissions:
@@ -71,7 +71,7 @@ jobs:
           file: ./Containerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }},latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
