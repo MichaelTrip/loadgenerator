@@ -1,0 +1,63 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: iperf3-server
+spec: {}
+status: {}
+
+...
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: iperf3-server
+  name: iperf3-server
+  namespace: iperf3-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iperf3-server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: iperf3-server
+    spec:
+      containers:
+      - image: ghcr.io/michaeltrip/iperf3container:latest
+        args: ["-s"]
+        name: iperf3container
+        ports:
+        - containerPort: 5201
+        resources: {}
+status: {}
+
+...
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: iperf3-server
+  name: iperf3
+  namespace: iperf3-server
+spec:
+  ports:
+  - port: 5201
+    protocol: TCP
+    targetPort: 5201
+  type: ClusterIP
+  selector:
+    app: iperf3-server
+
+...
+

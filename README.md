@@ -10,7 +10,7 @@
 
 ## Purpose
 
-I have written this LoadGenerator for showcasing loads in a Kubernetes cluster. Especially i wanted to show graphs in Grafana with load generated on a Kubernetes cluster.
+I have written this LoadGenerator for showcasing loads in a Kubernetes cluster. Especially i wanted to show graphs in Grafana with load generated on a Kubernetes cluster. For the networking testing part iPerf3 is needed. I have created a container with Kubernetes examples that can be found [here](https://github.com/MichaelTrip/iperf3container)
 
 ## Arguments
 

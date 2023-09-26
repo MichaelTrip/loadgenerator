@@ -1,14 +1,14 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: loadgenerator-job
+  name: iperf3container-job
 spec:
   template:
     spec:
       containers:
-      - name: loadgenerator
-        image: ghcr.io/michaeltrip/loadgenerator:latest
-        args: ["--max-cpu 50 --max-memory 512 --target-ip iperf3test.iperf --port 5301"]
+      - name: iperf3container
+        image: ghcr.io/michaeltrip/iperf3container:latest
+        args: ["-c", "iperf3.iperf3-server", "-p", "5201", "-t", "60"]
       restartPolicy: Never
   backoffLimit: 4
 
