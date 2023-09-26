@@ -1,4 +1,4 @@
-name: LoadTester container build
+name: Loadgenerator container build
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
