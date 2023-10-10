@@ -8,6 +8,7 @@ RUN mkdir -p /app
 
 COPY load_testing.py /app
 COPY load_testing_v2.py /app
+COPY load_testing_v3.py /app
 
 WORKDIR /app
 
