@@ -17,4 +17,4 @@ RUN chown -R app /app
 USER app
 
 
-ENTRYPOINT [ "python3", "/app/load_testing_v2.py"]
+ENTRYPOINT [ "python3", "/app/load_testing_v3.py"]
