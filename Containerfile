@@ -7,6 +7,7 @@ RUN apk add --no-cache stress-ng \
 RUN mkdir -p /app
 
 COPY load_testing.py /app
+COPY load_testing_v2.py /app
 
 WORKDIR /app
 
@@ -16,4 +17,4 @@ RUN chown -R app /app
 USER app
 
 
-ENTRYPOINT [ "python3", "/app/load_testing.py"]
+ENTRYPOINT [ "python3", "/app/load_testing_v2.py"]
